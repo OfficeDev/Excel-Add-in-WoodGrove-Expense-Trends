@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Published:70EDFC97-B41D-43C5-B751-7C00AD999804-->
+<!--Created:cb85b80c-f585-40ff-8bfc-12ff4d0e34a9-->
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>a6916f96-b11e-4353-9b83-4113ee5dcdbc</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Microsoft</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="WoodGroveExpenseTrends" />
+  <Description DefaultValue="WoodGroveExpenseTrends" />
+  <Hosts>
+    <Host Name="Workbook" />
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="~remoteAppUrl/App/Home/Home.html" />
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <!--BeginAddinCommandsMode integration-->
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <!--Each host can have a different set of commands. Cool huh!? 
+       Workbook=Excel Document=Word Presentation=PowerPoint 
+       Make sure the hosts you override match the hosts declared in the top section of the manifest-->
+      <Host xsi:type="Workbook">
+        <!--Form factor. Currenly only DesktopFormFactor is supported. We will add TabletFormFactor and PhoneFormFactor in the future-->
+        <DesktopFormFactor>
+          <!--Function file is an html page that includes the javascript where functions for ExecuteAction will be called. 
+            Think of the FunctionFile as the "code behind" ExecuteFunction-->
+          <FunctionFile resid="WG.FunctionFile.Url" />
+
+          <!--PrimaryCommandSurface==Main Office Ribbon-->
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <!--Use OfficeTab to extend an existing Tab. Use CustomTab to create a new tab 
+             Documentation includes all the IDs currently tested to work-->
+            <CustomTab id="WG.Tab1">
+              <!--Group. Ensure you provide a unique id. Recommendation for any IDs is to namespace using your company name-->
+              <Group id="WG.Tab1.Group1">
+                <!--Label for your group. resid must point to a ShortString resource-->
+                <Label resid="WG.Tab1.Group1Label" />
+                <Icon>
+                  <!--Sample Todo: Each size needs its own icon resource or it will look distorted when resized 
+                  Icons. Required sizes 16,31,80, optional 20, 24, 40, 48, 64. Strongly recommended to provide all sizes for great UX 
+                  Use PNG icons and remember that all URLs on the resources section must use HTTPS-->
+                  <bt:Image size="16" resid="WG.Group1.Icon_16" />
+                  <bt:Image size="32" resid="WG.Group1.Icon_32" />
+                  <bt:Image size="80" resid="WG.Group1.Icon_80" />
+                </Icon>
+                <Tooltip resid="WG.Group1.Tooltip" />
+                <!--Control. It can be of type "Button" or "Menu"-->
+                <Control xsi:type="Button" id="WG.WelcomeButton">
+                  <!--Label for your button. resid must point to a ShortString resource-->
+                  <Label resid="WG.WelcomeButton.Label" />
+                  <Supertip>
+                    <!--ToolTip title. resid must point to a ShortString resource-->
+                    <Title resid="WG.WelcomeButton.Label" />
+                    <!--ToolTip description. resid must point to a LongString resource-->
+                    <Description resid="WG.WelcomeButton.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="WG.WelcomeButton.Icon_16" />
+                    <bt:Image size="32" resid="WG.WelcomeButton.Icon_32" />
+                    <bt:Image size="80" resid="WG.WelcomeButton.Icon_80" />
+                  </Icon>
+                  <!--This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFuncion or ShowTaskpane
+                  Look at the FunctionFile.html page for reference on how to implement the function-->
+                  <Action xsi:type="ExecuteFunction">
+                    <!--Name of the function to call. This function needs to exist in the global DOM namespace of the function file-->
+                    <FunctionName>createWelcomeSheet</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="WG.ImportButton">
+                  <!--Label for your button. resid must point to a ShortString resource-->
+                  <Label resid="WG.ImportButton.Label" />
+                  <Supertip>
+                    <!--ToolTip title. resid must point to a ShortString resource-->
+                    <Title resid="WG.ImportButton.Label" />
+                    <!--ToolTip description. resid must point to a LongString resource-->
+                    <Description resid="WG.ImportButton.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="WG.ImportButton.Icon_16" />
+                    <bt:Image size="32" resid="WG.ImportButton.Icon_32" />
+                    <bt:Image size="80" resid="WG.ImportButton.Icon_80" />
+                  </Icon>
+                  <!--This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFuncion or ShowTaskpane
+                  Look at the FunctionFile.html page for reference on how to implement the function-->
+                   <Action xsi:type="ExecuteFunction">
+                    <!--Name of the function to call. This function needs to exist in the global DOM namespace of the function file-->
+                    <FunctionName>importTransactions</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="WG.CreateDashboardButton">
+                  <!--Label for your button. resid must point to a ShortString resource-->
+                  <Label resid="WG.CreateDashboardButton.Label" />
+                  <Supertip>
+                    <!--ToolTip title. resid must point to a ShortString resource-->
+                    <Title resid="WG.CreateDashboardButton.Label" />
+                    <!--ToolTip description. resid must point to a LongString resource-->
+                    <Description resid="WG.CreateDashboardButton.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="WG.CreateDashboardButton.Icon_16" />
+                    <bt:Image size="32" resid="WG.CreateDashboardButton.Icon_32" />
+                    <bt:Image size="80" resid="WG.CreateDashboardButton.Icon_80" />
+                  </Icon>
+                  <!--This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFuncion or ShowTaskpane
+                  Look at the FunctionFile.html page for reference on how to implement the function-->
+                   <Action xsi:type="ExecuteFunction">
+                    <!--Name of the function to call. This function needs to exist in the global DOM namespace of the function file-->
+                    <FunctionName>createDashboardAndTrackers</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+              <Group id="WG.Tab1.Group2">
+                <!--Label for your group. resid must point to a ShortString resource-->
+                <Label resid="WG.Tab1.Group2Label" />
+                <Icon>
+                  <!--Sample Todo: Each size needs its own icon resource or it will look distorted when resized 
+                  Icons. Required sizes 16,31,80, optional 20, 24, 40, 48, 64. Strongly recommended to provide all sizes for great UX 
+                  Use PNG icons and remember that all URLs on the resources section must use HTTPS-->
+                  <bt:Image size="16" resid="WG.Group2.Icon_16" />
+                  <bt:Image size="32" resid="WG.Group2.Icon_32" />
+                  <bt:Image size="80" resid="WG.Group2.Icon_80" />
+                </Icon>
+                <Tooltip resid="WG.Group2.Tooltip" />
+                <!--Control. It can be of type "Button" or "Menu"-->
+                <Control xsi:type="Menu" id="WG.AnalyzeMenu">
+                  <Label resid="WG.AnalyzeMenu.Label" />
+                  <Supertip>
+                    <Title resid="WG.AnalyzeMenu.Label" />
+                    <Description resid="WG.AnalyzeMenu.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="WG.AnalyzeMenu.Icon_16" />
+                    <bt:Image size="32" resid="WG.AnalyzeMenu.Icon_32" />
+                    <bt:Image size="80" resid="WG.AnalyzeMenu.Icon_80" />
+                  </Icon>
+                  <Items>
+                    <Item id="WG.AnalyzeMenu.Item1">
+                      <Label resid="WG.AnalyzeMenu.Item1.Label"/>
+                      <Supertip>
+                        <Title resid="WG.AnalyzeMenu.Item1.Label" />
+                        <Description resid="WG.AnalyzeMenu.Item1.Tooltip" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="WG.AnalyzeMenu.Item1.Icon_16" />
+                       <bt:Image size="32" resid="WG.AnalyzeMenu.Item1.Icon_32" />
+                        <bt:Image size="80" resid="WG.AnalyzeMenu.Item1.Icon_80" />
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <!--Name of the function to call. This function needs to exist in the global DOM namespace of the function file-->
+                        <FunctionName>showYTDTransactions</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="WG.AnalyzeMenu.Item2">
+                      <Label resid="WG.AnalyzeMenu.Item2.Label"/>
+                      <Supertip>
+                        <Title resid="WG.AnalyzeMenu.Item2.Label" />
+                        <Description resid="WG.AnalyzeMenu.Item2.Tooltip" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="WG.AnalyzeMenu.Item2.Icon_16" />
+                        <bt:Image size="32" resid="WG.AnalyzeMenu.Item2.Icon_32" />
+                        <bt:Image size="80" resid="WG.AnalyzeMenu.Item2.Icon_80" />
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <!--Name of the function to call. This function needs to exist in the global DOM namespace of the function file-->
+                        <FunctionName>showLastYearTransactions</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="WG.AnalyzeMenu.Item3">
+                      <Label resid="WG.AnalyzeMenu.Item3.Label"/>
+                      <Supertip>
+                        <Title resid="WG.AnalyzeMenu.Item3.Label" />
+                        <Description resid="WG.AnalyzeMenu.Item3.Tooltip" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="WG.AnalyzeMenu.Item3.Icon_16" />
+                        <bt:Image size="32" resid="WG.AnalyzeMenu.Item3.Icon_32" />
+                        <bt:Image size="80" resid="WG.AnalyzeMenu.Item3.Icon_80" />
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <!--Name of the function to call. This function needs to exist in the global DOM namespace of the function file-->
+                        <FunctionName>showAllTransactions</FunctionName>
+                      </Action>
+                    </Item>
+                  </Items>
+                </Control>
+                <Control xsi:type="Button" id="WG.AnalyzeTaskpaneButton">
+                  <!--Label for your button. resid must point to a ShortString resource-->
+                  <Label resid="WG.AnalyzeTaskPane.Label" />
+                  <Supertip>
+                    <!--ToolTip title. resid must point to a ShortString resource-->
+                    <Title resid="WG.AnalyzeTaskPane.Label" />
+                    <!--ToolTip description. resid must point to a LongString resource-->
+                    <Description resid="WG.AnalyzeTaskPaneButton.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="WG.AnalyzeTaskPaneButton.Icon_16" />
+                    <bt:Image size="32" resid="WG.AnalyzeTaskPaneButton.Icon_32" />
+                    <bt:Image size="80" resid="WG.AnalyzeTaskPaneButton.Icon_80" />
+                  </Icon>
+                  <!--This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFuncion or ShowTaskpane
+                  Look at the FunctionFile.html page for reference on how to implement the function-->
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>Button2Id1</TaskpaneId>
+                    <!--Provide a url resource id for the location that will be displayed on the task pane-->
+                    <SourceLocation resid="WG.Taskpane1.Url" />
+                  </Action>
+                </Control>
+                </Group>
+                
+                 <Group id="WG.Tab1.Group3">
+                <!--Label for your group. resid must point to a ShortString resource-->
+                <Label resid="WG.Tab1.Group3Label" />
+                <Icon>
+                  <!--Sample Todo: Each size needs its own icon resource or it will look distorted when resized 
+                  Icons. Required sizes 16,31,80, optional 20, 24, 40, 48, 64. Strongly recommended to provide all sizes for great UX 
+                  Use PNG icons and remember that all URLs on the resources section must use HTTPS-->
+                  <bt:Image size="16" resid="WG.Group3.Icon_16" />
+                  <bt:Image size="32" resid="WG.Group3.Icon_32" />
+                  <bt:Image size="80" resid="WG.Group3.Icon_80" />
+                </Icon>
+                <Tooltip resid="WG.Group3.Tooltip" />
+                <!--Control. It can be of type "Button" or "Menu"-->
+                <Control xsi:type="Button" id="WG.AddDonationButton">
+                  <!--Label for your button. resid must point to a ShortString resource-->
+                  <Label resid="WG.AddDonationButton.Label" />
+                  <Supertip>
+                    <!--ToolTip title. resid must point to a ShortString resource-->
+                    <Title resid="WG.AddDonationButton.Label" />
+                    <!--ToolTip description. resid must point to a LongString resource-->
+                    <Description resid="WG.AddDonationButton.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="WG.AddDonationButton.Icon_16" />
+                    <bt:Image size="32" resid="WG.AddDonationButton.Icon_32" />
+                    <bt:Image size="80" resid="WG.AddDonationButton.Icon_80" />
+                  </Icon>
+                  <!--This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFuncion or ShowTaskpane
+                  Look at the FunctionFile.html page for reference on how to implement the function-->
+                  <Action xsi:type="ExecuteFunction">
+                    <!--Name of the function to call. This function needs to exist in the global DOM namespace of the function file-->
+                    <FunctionName>addToTaxDeductibleItems</FunctionName>
+                  </Action>
+                </Control>
+                   <Control xsi:type="Button" id="WG.AddFollowUpButton">
+                     <!--Label for your button. resid must point to a ShortString resource-->
+                     <Label resid="WG.AddFollowUpButton.Label" />
+                     <Supertip>
+                       <!--ToolTip title. resid must point to a ShortString resource-->
+                       <Title resid="WG.AddFollowUpButton.Label" />
+                       <!--ToolTip description. resid must point to a LongString resource-->
+                       <Description resid="WG.AddFollowUpButton.Tooltip" />
+                     </Supertip>
+                     <Icon>
+                       <bt:Image size="16" resid="WG.AddFollowUpButton.Icon_16" />
+                       <bt:Image size="32" resid="WG.AddFollowUpButton.Icon_32" />
+                       <bt:Image size="80" resid="WG.AddFollowUpButton.Icon_80" />
+                     </Icon>
+                     <!--This is what happens when the command is triggered (E.g. click on the Ribbon). Supported actions are ExecuteFuncion or ShowTaskpane
+                  Look at the FunctionFile.html page for reference on how to implement the function-->
+                     <Action xsi:type="ExecuteFunction">
+                       <!--Name of the function to call. This function needs to exist in the global DOM namespace of the function file-->
+                       <FunctionName>addToFollowUpItems</FunctionName>
+                     </Action>
+                   </Control>
+              </Group>
+              
+              <!--Label of your tab 
+               If validating with XSD it needs to be at the end, we might change this before release-->
+              <Label resid="WG.Tab1.TabLabel" />
+            </CustomTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="WG.Group1.Icon_16" DefaultValue="~remoteAppUrl/Images/import_16x16.png" />
+        <bt:Image id="WG.Group1.Icon_32" DefaultValue="~remoteAppUrl/Images/import_32x32.png" />
+        <bt:Image id="WG.Group1.Icon_80" DefaultValue="~remoteAppUrl/Images/import_80x80.png" />
+        <bt:Image id="WG.Group2.Icon_16" DefaultValue="~remoteAppUrl/Images/yearoveryear_16x16.png" />
+        <bt:Image id="WG.Group2.Icon_32" DefaultValue="~remoteAppUrl/Images/yearoveryear_32x32.png" />
+        <bt:Image id="WG.Group2.Icon_80" DefaultValue="~remoteAppUrl/Images/yearoveryear_80x80.png" />
+        <bt:Image id="WG.Group3.Icon_16" DefaultValue="~remoteAppUrl/Images/taxdeductible_16x16.png" />
+        <bt:Image id="WG.Group3.Icon_32" DefaultValue="~remoteAppUrl/Images/taxdeductible_32x32.png" />
+        <bt:Image id="WG.Group3.Icon_80" DefaultValue="~remoteAppUrl/Images/taxdeductible_80x80.png" />
+        <bt:Image id="WG.WelcomeButton.Icon_16" DefaultValue="~remoteAppUrl/Images/getStarted_16.png" />
+        <bt:Image id="WG.WelcomeButton.Icon_32" DefaultValue="~remoteAppUrl/Images/getStarted_32.png" />
+        <bt:Image id="WG.WelcomeButton.Icon_80" DefaultValue="~remoteAppUrl/Images/getStarted_80.png" />
+        <bt:Image id="WG.ImportButton.Icon_16" DefaultValue="~remoteAppUrl/Images/import_16x16.png" />
+        <bt:Image id="WG.ImportButton.Icon_32" DefaultValue="~remoteAppUrl/Images/import_32x32.png" />
+        <bt:Image id="WG.ImportButton.Icon_80" DefaultValue="~remoteAppUrl/Images/import_80x80.png" />
+        <bt:Image id="WG.CreateDashboardButton.Icon_16" DefaultValue="~remoteAppUrl/Images/history_16x16.png" />
+        <bt:Image id="WG.CreateDashboardButton.Icon_32" DefaultValue="~remoteAppUrl/Images/history_32x32.png" />
+        <bt:Image id="WG.CreateDashboardButton.Icon_80" DefaultValue="~remoteAppUrl/Images/history_80x80.png" />
+        <bt:Image id="WG.AnalyzeMenu.Icon_16" DefaultValue="~remoteAppUrl/Images/yearoveryear_16x16.png" />
+        <bt:Image id="WG.AnalyzeMenu.Icon_32" DefaultValue="~remoteAppUrl/Images/yearoveryear_32x32.png" />
+        <bt:Image id="WG.AnalyzeMenu.Icon_80" DefaultValue="~remoteAppUrl/Images/yearoveryear_80x80.png" />
+        <bt:Image id="WG.AnalyzeMenu.Item1.Icon_16" DefaultValue="~remoteAppUrl/Images/yearoveryear_16x16.png" />
+        <bt:Image id="WG.AnalyzeMenu.Item1.Icon_32" DefaultValue="~remoteAppUrl/Images/yearoveryear_32x32.png" />
+        <bt:Image id="WG.AnalyzeMenu.Item1.Icon_80" DefaultValue="~remoteAppUrl/Images/yearoveryear_80x80.png" />
+        <bt:Image id="WG.AnalyzeMenu.Item2.Icon_16" DefaultValue="~remoteAppUrl/Images/yearoveryear_16x16.png" />
+        <bt:Image id="WG.AnalyzeMenu.Item2.Icon_32" DefaultValue="~remoteAppUrl/Images/yearoveryear_32x32.png" />
+        <bt:Image id="WG.AnalyzeMenu.Item2.Icon_80" DefaultValue="~remoteAppUrl/Images/yearoveryear_80x80.png" />
+        <bt:Image id="WG.AnalyzeMenu.Item3.Icon_16" DefaultValue="~remoteAppUrl/Images/yearoveryear_16x16.png" />
+        <bt:Image id="WG.AnalyzeMenu.Item3.Icon_32" DefaultValue="~remoteAppUrl/Images/yearoveryear_32x32.png" />
+        <bt:Image id="WG.AnalyzeMenu.Item3.Icon_80" DefaultValue="~remoteAppUrl/Images/yearoveryear_80x80.png" />
+        <bt:Image id="WG.AnalyzeTaskPaneButton.Icon_16" DefaultValue="~remoteAppUrl/Images/yearoveryear_16x16.png" />
+        <bt:Image id="WG.AnalyzeTaskPaneButton.Icon_32" DefaultValue="~remoteAppUrl/Images/yearoveryear_32x32.png" />
+        <bt:Image id="WG.AnalyzeTaskPaneButton.Icon_80" DefaultValue="~remoteAppUrl/Images/yearoveryear_80x80.png" />
+        <bt:Image id="WG.AddDonationButton.Icon_16" DefaultValue="~remoteAppUrl/Images/taxdeductible_16x16.png" />
+        <bt:Image id="WG.AddDonationButton.Icon_32" DefaultValue="~remoteAppUrl/Images/taxdeductible_32x32.png" />
+        <bt:Image id="WG.AddDonationButton.Icon_80" DefaultValue="~remoteAppUrl/Images/taxdeductible_80x80.png" />
+        <bt:Image id="WG.AddFollowUpButton.Icon_16" DefaultValue="~remoteAppUrl/Images/followup_16x16.png" />
+        <bt:Image id="WG.AddFollowUpButton.Icon_32" DefaultValue="~remoteAppUrl/Images/followup_32x32.png" />
+        <bt:Image id="WG.AddFollowUpButton.Icon_80" DefaultValue="~remoteAppUrl/Images/followup_80x80.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="WG.FunctionFile.Url" DefaultValue="~remoteAppUrl/App/Home/FunctionFile.html" />
+        <bt:Url id="WG.Taskpane1.Url" DefaultValue="~remoteAppUrl/App/Home/TaskPane.html" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="WG.WelcomeButton.Label" DefaultValue="Welcome" />
+        <bt:String id="WG.ImportButton.Label" DefaultValue="Import Transactions" />
+        <bt:String id="WG.CreateDashboardButton.Label" DefaultValue="Create Dashboards" />
+        <bt:String id="WG.AnalyzeMenu.Label" DefaultValue="History" />
+        <bt:String id="WG.AnalyzeMenu.Item1.Label" DefaultValue="Year to Date" />
+        <bt:String id="WG.AnalyzeMenu.Item2.Label" DefaultValue="Last Year" />
+        <bt:String id="WG.AnalyzeMenu.Item3.Label" DefaultValue="All" />
+        <bt:String id="WG.AnalyzeTaskPane.Label" DefaultValue="Analyze Trends" />
+        <bt:String id="WG.Tab1.Group1Label" DefaultValue="Get Started" />
+        <bt:String id="WG.Tab1.Group2Label" DefaultValue="Analyze Trends" />
+        <bt:String id="WG.Tab1.Group3Label" DefaultValue="Track Special Transactions" />
+        <bt:String id="WG.Tab1.TabLabel" DefaultValue="WoodGrove" />
+        <bt:String id="WG.AddDonationButton.Label" DefaultValue="Add Donation" />
+        <bt:String id="WG.AddFollowUpButton.Label" DefaultValue="Follow Up" />
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="WG.Group1.Tooltip" DefaultValue="Click to get started with the Expense Trends Add-in" />
+        <bt:String id="WG.Group2.Tooltip" DefaultValue="Click to analyze expense trends" />
+        <bt:String id="WG.Group3.Tooltip" DefaultValue="Click to track donations and follow up items" />
+        <bt:String id="WG.WelcomeButton.Tooltip" DefaultValue="Click to learn about the Expense Trends Add-in" />
+       <bt:String id="WG.ImportButton.Tooltip" DefaultValue="Click to import transactions from the WoodGrove Bank" />
+        <bt:String id="WG.CreateDashboardButton.Tooltip" DefaultValue="Click to create dashboards and trackers" />
+        <bt:String id="WG.AnalyzeMenu.Tooltip" DefaultValue="Click to analyze activity by time period on this menu" />
+        <bt:String id="WG.AnalyzeMenu.Item1.Tooltip" DefaultValue="Click to show year to date transactions" />
+        <bt:String id="WG.AnalyzeMenu.Item2.Tooltip" DefaultValue="Click to show last year's transactions" />
+        <bt:String id="WG.AnalyzeMenu.Item3.Tooltip" DefaultValue="Click to show all transactions" />
+        <bt:String id="WG.AnalyzeTaskPaneButton.Tooltip" DefaultValue="Click to analyze spending activity on this menu" />
+        <bt:String id="WG.AddDonationButton.Tooltip" DefaultValue="Click to add the selected transaction as a donation" />
+        <bt:String id="WG.AddFollowUpButton.Tooltip" DefaultValue="Click to add the selected transaction for follow up" />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
