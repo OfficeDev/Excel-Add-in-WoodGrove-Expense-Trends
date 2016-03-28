@@ -46,7 +46,6 @@
                   <bt:Image size="32" resid="WG.Group1.Icon_32" />
                   <bt:Image size="80" resid="WG.Group1.Icon_80" />
                 </Icon>
-                <Tooltip resid="WG.Group1.Tooltip" />
                 <!--Control. It can be of type "Button" or "Menu"-->
                 <Control xsi:type="Button" id="WG.WelcomeButton">
                   <!--Label for your button. resid must point to a ShortString resource-->
@@ -123,7 +122,6 @@
                   <bt:Image size="32" resid="WG.Group2.Icon_32" />
                   <bt:Image size="80" resid="WG.Group2.Icon_80" />
                 </Icon>
-                <Tooltip resid="WG.Group2.Tooltip" />
                 <!--Control. It can be of type "Button" or "Menu"-->
                 <Control xsi:type="Menu" id="WG.AnalyzeMenu">
                   <Label resid="WG.AnalyzeMenu.Label" />
@@ -209,9 +207,8 @@
                     <SourceLocation resid="WG.Taskpane1.Url" />
                   </Action>
                 </Control>
-                </Group>
-                
-                 <Group id="WG.Tab1.Group3">
+                </Group>          
+                <Group id="WG.Tab1.Group3">
                 <!--Label for your group. resid must point to a ShortString resource-->
                 <Label resid="WG.Tab1.Group3Label" />
                 <Icon>
@@ -222,7 +219,6 @@
                   <bt:Image size="32" resid="WG.Group3.Icon_32" />
                   <bt:Image size="80" resid="WG.Group3.Icon_80" />
                 </Icon>
-                <Tooltip resid="WG.Group3.Tooltip" />
                 <!--Control. It can be of type "Button" or "Menu"-->
                 <Control xsi:type="Button" id="WG.AddDonationButton">
                   <!--Label for your button. resid must point to a ShortString resource-->
