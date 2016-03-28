@@ -23,7 +23,7 @@
        Workbook=Excel Document=Word Presentation=PowerPoint 
        Make sure the hosts you override match the hosts declared in the top section of the manifest-->
       <Host xsi:type="Workbook">
-        <!--Form factor. Currenly only DesktopFormFactor is supported. We will add TabletFormFactor and PhoneFormFactor in the future-->
+        <!--Form factor. Currently only DesktopFormFactor is supported. We will add TabletFormFactor and PhoneFormFactor in the future-->
         <DesktopFormFactor>
           <!--Function file is an html page that includes the javascript where functions for ExecuteAction will be called. 
             Think of the FunctionFile as the "code behind" ExecuteFunction-->
@@ -39,7 +39,7 @@
                 <!--Label for your group. resid must point to a ShortString resource-->
                 <Label resid="WG.Tab1.Group1Label" />
                 <Icon>
-                  <!--Sample Todo: Each size needs its own icon resource or it will look distorted when resized 
+                  <!--Each size needs its own icon resource or it will look distorted when resized 
                   Icons. Required sizes 16,31,80, optional 20, 24, 40, 48, 64. Strongly recommended to provide all sizes for great UX 
                   Use PNG icons and remember that all URLs on the resources section must use HTTPS-->
                   <bt:Image size="16" resid="WG.Group1.Icon_16" />

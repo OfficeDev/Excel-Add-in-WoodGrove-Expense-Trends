@@ -26,7 +26,7 @@ function createWelcomeSheet() {
         var worksheetsBefore = ctx.workbook.worksheets;
 
         // Queue a command to load the name property of each worksheet in the collection
-        // We will use this later to hide all of the existing sheets from view
+        // We will use this later to hide all the existing sheets from view
         worksheetsBefore.load("name");
 
         //Run the queued-up commands, and return a promise to indicate task completion
@@ -36,7 +36,7 @@ function createWelcomeSheet() {
                 // Queue a command to add a new Welcome sheet to the workbook
                 var welcomeSheet = ctx.workbook.worksheets.add("Welcome");
 
-                // Create strings to store all the static content to display in the Welcome sheet
+                // Create strings to store all static content to display in the Welcome sheet
                 var sheetTitle = "WoodGrove Bank";
                 var sheetHeading1 = "With Expense Trends, you can...";
                 var sheetDesc1 = "1.  Import expense transactions into the workbook using the WoodGrove Trends task pane.";
@@ -66,8 +66,8 @@ function createWelcomeSheet() {
                 // Queue a command to activate the Welcome sheet
                 welcomeSheet.activate();
 
-                //// Now queue commands to rename and hide all the sheets that were in the workbook. 
-                //// We are not overwriting or deleting any existing sheets
+                // Queue commands to rename and hide all sheets that were previously in the workbook. 
+                // We aren't overwriting or deleting any existing sheets
                 for (var i = 0; i < worksheetsBefore.items.length; i++) {
                     worksheetsBefore.items[i].name += "Before";
                     worksheetsBefore.items[i].visibility = "hidden";
@@ -99,7 +99,7 @@ function importTransactions() {
         // Queue a command to add a new worksheet to store the transactions
         var dataSheet = ctx.workbook.worksheets.add("Transactions");
 
-        // Create strings to store all the static content to display in the Transactions sheet
+        // Create strings to store all static content to display in the Transactions sheet
         var sheetTitle = "WoodGrove Bank";
         var sheetHeading1 = "Expense Transactions - Master List";
         var sheetDesc1 = "This is the master list of your spending activity.";
@@ -110,7 +110,7 @@ function importTransactions() {
         //Fill white color in the sheet to remove gridlines
         dataSheet.getRange().format.fill.color = "white";
 
-        // Add all the intro content to the Welcome sheet and format the text
+        // Add all the staticcontent to the Transactions sheet and format the text
         addContentToWorksheet(dataSheet, "B1:E1", sheetTitle, "SheetTitle");
         addContentToWorksheet(dataSheet, "B3:E3", sheetHeading1, "SheetHeading");
         addContentToWorksheet(dataSheet, "C4:E4", sheetDesc1, "SheetHeadingDesc");
@@ -354,22 +354,22 @@ function createDashboard() {
         // Queue a command to add a new worksheet to show the dashboard
         var dashboardSheet = ctx.workbook.worksheets.add("Dashboard");
 
-        // Create strings to store all the static content to display in the Welcome sheet
+        // Create strings to store all static content to display in the Welcome sheet
         var sheetTitle = "WoodGrove Bank";
         var sheetHeading1 = "Expense Trends Dashboard";
         var sheetDesc1 = "See a summary of your spending activity by category and by month.";
-        var sheetDesc2 = "Analyze weekend vs weekday spending.";
+        var sheetDesc2 = "Analyze weekend vs. weekday spending.";
         var sheetHeading2 = "Summary";
         var summaryDataHeader1 = "Total Spent";
         var summaryDataHeader2 = "Total Transactions";
         var summaryDataHeader3 = "Average Spent per Transaction";
-        var tableHeading1 = "Expenses By Category";
-        var tableHeading2 = "Expenses By Month";
+        var tableHeading1 = "Expenses by Category";
+        var tableHeading2 = "Expenses by Month";
 
         //Fill white color in the sheet to remove gridlines
         dashboardSheet.getRange().format.fill.color = "white";
 
-        // Add all the intro content to the Welcome sheet and format the text
+        // Add all static content to the Dashboard sheet and format the text
         addContentToWorksheet(dashboardSheet, "B1:E1", sheetTitle, "SheetTitle");
         addContentToWorksheet(dashboardSheet, "B3:E3", sheetHeading1, "SheetHeading");
         addContentToWorksheet(dashboardSheet, "C4:G4", sheetDesc1, "SheetHeadingDesc");
@@ -388,7 +388,7 @@ function createDashboard() {
         // Queue a command to set the header row
         expensesByCategoryTable.getHeaderRowRange().values = [["EXPENSE CATEGORY", "TOTAL SPENT"]];
 
-        // Queue a command to add the Expensed by Month table
+        // Queue a command to add the Expenses by Month table
         var expensesByMonthTable = ctx.workbook.tables.add('Dashboard!F29:I29', true);
         expensesByMonthTable.name = "ExpensesByMonthTable";
 
@@ -405,7 +405,7 @@ function createDashboard() {
         expensesByCategoryTable.columns.getItemAt(1).numberFormat = "$#";
         expensesByMonthTable.columns.getItemAt(1).numberFormat = "$#";
 
-        // Now let's add rows to the summary tables
+        //Next, let's queue commands to add rows to the summary tables
         // First, queue a command to get the transactions table in the Transactions sheet
         var transactionsTable = ctx.workbook.tables.getItem('TransactionsTable', true);
 
@@ -556,36 +556,22 @@ function createDonationsTracker() {
         var sheetTitle = "WoodGrove Bank";
 
         var sheetHeading1 = "Donations Tracker";
-
         var sheetDesc1 = "Track your charitable contributions throughout the year.";
-
         var sheetDesc2 = "Use this data at the end of the year to report your tax deductions.";
-
         var sheetHeading2 = "Summary";
-
         var summaryDataHeader1 = "Total Donations";
-
         var tableHeading1 = "Donations By Organization";
-
         var tableHeading2 = "Donations By Month";
-
         var tableHeading3 = "Transaction Details";
 
         // Add all the intro content to the Welcome sheet and format the text
         addContentToWorksheet(donationsSheet, "B1:G1", sheetTitle, "SheetTitle");
-
         addContentToWorksheet(donationsSheet, "B3:C3", sheetHeading1, "SheetHeading");
-
         addContentToWorksheet(donationsSheet, "C4:G4", sheetDesc1, "SheetHeadingDesc");
-
         addContentToWorksheet(donationsSheet, "C5:J5", sheetDesc2, "SheetHeadingDesc");
-
         addContentToWorksheet(donationsSheet, "B7:B7", sheetHeading2, "SheetHeading");
-
         addContentToWorksheet(donationsSheet, "B9:C9", summaryDataHeader1, "SummaryDataHeader");
-
         addContentToWorksheet(donationsSheet, "B11:D11", tableHeading1, "TableHeading");
-
         addContentToWorksheet(donationsSheet, "E11:F11", tableHeading2, "TableHeading");
 
         addContentToWorksheet(donationsSheet, "H11:K11", tableHeading3, "TableHeading");
@@ -619,15 +605,10 @@ function createDonationsTracker() {
         donationsByMonthTable.getTotalRowRange().getLastCell().values = [["=SUM([AMOUNT]"]];
 
         addContentToWorksheet(donationsSheet, "B12:C12", "", "TableHeaderRow");
-
         addContentToWorksheet(donationsSheet, "B13:C250", "", "TableDataRows");
-
         addContentToWorksheet(donationsSheet, "E12:F12", "", "TableHeaderRow");
-
         addContentToWorksheet(donationsSheet, "E13:F250", "", "TableDataRows");
-
         addContentToWorksheet(donationsSheet, "H12:K12", "", "TableHeaderRow");
-
         addContentToWorksheet(donationsSheet, "G13:J250", "", "TableDataRows");
 
         // Set the number format for Date and Currency columns
