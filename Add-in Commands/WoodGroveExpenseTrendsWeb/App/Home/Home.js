@@ -76,7 +76,7 @@
 				    // Queue a command to add a new Welcome sheet to the workbook
 				    var welcomeSheet = ctx.workbook.worksheets.add("Welcome");
 
-				    // Create strings to store all the static content to display in the Welcome sheet
+				    // Create strings to store all static content to display in the Welcome sheet
 				    var sheetTitle = "WoodGrove Bank";
 				    var sheetHeading1 = "With Expense Trends, you can...";
 				    var sheetDesc1 = "1.  Import expense transactions into the workbook using the WoodGrove Trends task pane.";
@@ -87,7 +87,7 @@
 				    //Queue a command to fill white color in the sheet to remove gridlines
 				    welcomeSheet.getRange().format.fill.color = "white";
 
-				    // Add all the intro content to the Welcome sheet and format the text
+				    // Add all static content to the Welcome sheet and format the text
 				    addContentToWorksheet(welcomeSheet, "B1:K1", sheetTitle, "SheetTitle");
 				    addContentToWorksheet(welcomeSheet, "B5:K5", sheetHeading1, "SheetHeading");
 				    addContentToWorksheet(welcomeSheet, "C6:K6", sheetDesc1, "SheetHeadingDesc");
@@ -134,7 +134,7 @@
             // Queue a command to add a new worksheet to store the transactions
             var dataSheet = ctx.workbook.worksheets.add("Transactions");
 
-            // Create strings to store all the static content to display in the Transactions sheet
+            // Create strings to store all static content to display in the Transactions sheet
             var sheetTitle = "WoodGrove Bank";
             var sheetHeading1 = "Expense Transactions - Master List";
             var sheetDesc1 = "This is the master list of your spending activity.";
@@ -142,10 +142,10 @@
             var sheetDesc3 = "Track donations and flag items that need follow up.";
             var tableHeading = "Transactions";
 
-            //Queue a command to fill white color in the sheet to remove gridlines from view
+            //Queue a command to remove gridlines from view
             dataSheet.getRange().format.fill.color = "white";
 
-            // Add all the static content to the Transactions sheet and format the text
+            // Add all static content to the Transactions sheet and format the text
             addContentToWorksheet(dataSheet, "B1:E1", sheetTitle, "SheetTitle");
             addContentToWorksheet(dataSheet, "B3:E3", sheetHeading1, "SheetHeading");
             addContentToWorksheet(dataSheet, "C4:E4", sheetDesc1, "SheetHeadingDesc");
@@ -403,7 +403,7 @@
             // Queue a command to add a new worksheet to show the dashboard
             var dashboardSheet = ctx.workbook.worksheets.add("Dashboard");
 
-            // Create strings to store all the static content to display in the Dashboard sheet
+            // Create strings to store all static content to display in the Dashboard sheet
             var sheetTitle = "WoodGrove Bank";
             var sheetHeading1 = "Expense Trends Dashboard";
             var sheetDesc1 = "See a summary of your spending activity by category and by month.";
@@ -415,10 +415,10 @@
             var tableHeading1 = "Expenses By Category";
             var tableHeading2 = "Expenses By Month";
 
-            //Queue a command to fill white color in the sheet to remove gridlines
+            //Queue a command to remove gridlines
             dashboardSheet.getRange().format.fill.color = "white";
 
-            // Add all the intro content to the Dashboard sheet and format the text
+            // Add all static content to the Dashboard sheet and format the text
             addContentToWorksheet(dashboardSheet, "B1:E1", sheetTitle, "SheetTitle");
             addContentToWorksheet(dashboardSheet, "B3:E3", sheetHeading1, "SheetHeading");
             addContentToWorksheet(dashboardSheet, "C4:G4", sheetDesc1, "SheetHeadingDesc");
@@ -457,9 +457,9 @@
             expensesByCategoryTable.columns.getItemAt(1).numberFormat = "$#";
             expensesByMonthTable.columns.getItemAt(1).numberFormat = "$#";
 
-            // Next we need to queue commands to add rows to the summary tables
+            // Next, we need to queue commands to add rows to summary tables
 
-            // First, queue a command to get the transactions table in the Data sheet
+            // First, queue a command to get the transactions table in the Transactions sheet
             var transactionsTable = ctx.workbook.tables.getItem('TransactionsTable', true);
 
             // Queue commands to extract the Category and Month column values from the Transactions table and load the column values
@@ -535,7 +535,7 @@
                     rangeAvgSpentPerTrans.format.font.name = "Corbel";
                     rangeAvgSpentPerTrans.format.font.size = 12;
 
-                    // Queue commands to create a doughnut chart for showing % spent on expenses by category
+                    // Queue commands to create a doughnut chart for showing % spent on Expenses by Category
                     var categoryChartDataRange = expensesByCategoryTable.getDataBodyRange();
                     var categoryChart = dashboardSheet.charts.add("3dpie", categoryChartDataRange, Excel.ChartSeriesBy.auto);
                     categoryChart.setPosition("B13", "D25");
@@ -604,7 +604,7 @@
             // Queue a command to add a new worksheet to track the donations
             var donationsSheet = ctx.workbook.worksheets.add("Donations");
 
-            // Create strings to store all the static content to display in the Donations sheet
+            // Create strings to store all static content to display in the Donations sheet
             var sheetTitle = "WoodGrove Bank";
             var sheetHeading1 = "Donations Tracker";
             var sheetDesc1 = "Track your charitable contributions throughout the year.";
@@ -615,10 +615,10 @@
             var tableHeading2 = "Donations By Month";
             var tableHeading3 = "Transaction Details";
 
-            //Queue a commad to fill white color in the sheet to remove gridlines
+            //Queue a command to remove gridlines
             donationsSheet.getRange().format.fill.color = "white";
 
-            // Add all the intro content to the Donations sheet and format the text
+            // Add all static content to the Donations sheet and format the text
             addContentToWorksheet(donationsSheet, "B1:G1", sheetTitle, "SheetTitle");
             addContentToWorksheet(donationsSheet, "B3:C3", sheetHeading1, "SheetHeading");
             addContentToWorksheet(donationsSheet, "C4:G4", sheetDesc1, "SheetHeadingDesc");
@@ -692,7 +692,7 @@
 		});
     }
 
-    // Create the follow up items tracker
+    // Create the follow-up items tracker
     function createFollowupItemsTracker() {
 
         // Run a batch operation against the Excel object model
@@ -701,7 +701,7 @@
             // Queue a command to add a new worksheet to store the follow up items
             var followupSheet = ctx.workbook.worksheets.add("FollowUp");
 
-            // Create strings to store all the static content to display in the Follow Up sheet
+            // Create strings to store all static content to display in the follow-up sheet
             var sheetTitle = "WoodGrove Bank";
             var sheetHeading1 = "Follow Up Items Tracker";
             var sheetDesc1 = "Track the transactions that need follow up in this tracker.";
@@ -710,10 +710,10 @@
             var summaryDataHeader1 = "Items Pending";
             var tableHeading1 = "Follow Up Items List";
 
-            //Queue a commad to fill white color in the sheet to remove gridlines
+            //Queue a command to remove gridlines
             followupSheet.getRange().format.fill.color = "white";
 
-            // Add all the static content to the Follow Up sheet and format the text
+            // Add all the static content to the Follow-up sheet and format the text
             addContentToWorksheet(followupSheet, "B1:E1", sheetTitle, "SheetTitle");
             addContentToWorksheet(followupSheet, "B3:C3", sheetHeading1, "SheetHeading");
             addContentToWorksheet(followupSheet, "C4:G4", sheetDesc1, "SheetHeadingDesc");

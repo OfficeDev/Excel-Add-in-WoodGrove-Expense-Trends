@@ -66,7 +66,7 @@
             var worksheetsBefore = ctx.workbook.worksheets;
 
             // Queue a command to load the name property of each worksheet in the collection
-            // We will use this later to hide all of the existing sheets from view
+            // We will use this later to hide all the existing sheets from view
             worksheetsBefore.load("name");
 
             //Run the queued-up commands, and return a promise to indicate task completion
@@ -76,18 +76,18 @@
 				    // Queue a command to add a new Welcome sheet to the workbook
 				    var welcomeSheet = ctx.workbook.worksheets.add("Welcome");
 
-				    // Create strings to store all the static content to display in the Welcome sheet
+				    // Create strings to store all static content to display in the Welcome sheet
 				    var sheetTitle = "WoodGrove Bank";
 				    var sheetHeading1 = "With Expense Trends, you can...";
 				    var sheetDesc1 = "1.  Import expense transactions into the workbook using the WoodGrove Trends task pane.";
 				    var sheetDesc2 = "2.  Create dashboards and trackers.";
 				    var sheetDesc3 = "3.  View and analyze trends.";
-				    var sheetDesc4 = "4.  Select a transaction in the Transactions sheet and add it as a charitable donation or a follow up item.";
+				    var sheetDesc4 = "4.  Select a transaction in the Transactions sheet and add it as a charitable donation or a follow-up item.";
 
 				    //Queue a command to fill white color in the sheet to remove gridlines
 				    welcomeSheet.getRange().format.fill.color = "white";
 
-				    // Add all the intro content to the Welcome sheet and format the text
+				    // Add all static content to the Welcome sheet and format the text
 				    addContentToWorksheet(welcomeSheet, "B1:K1", sheetTitle, "SheetTitle");
 				    addContentToWorksheet(welcomeSheet, "B5:K5", sheetHeading1, "SheetHeading");
 				    addContentToWorksheet(welcomeSheet, "C6:K6", sheetDesc1, "SheetHeadingDesc");
@@ -105,8 +105,8 @@
 				    // Queue a command to activate Welcome sheet
 				    welcomeSheet.activate();
 
-				    // Now queue commands to rename and hide all the sheets that were previously in the workbook. 
-				    // We are not overwriting or deleting any existing sheets
+				    // Queue commands to rename and hide all sheets that were previously in the workbook. 
+				    // We aren't overwriting or deleting any existing sheets
 				    for (var i = 0; i < worksheetsBefore.items.length; i++) {
 				        worksheetsBefore.items[i].name += "Before";
 				        worksheetsBefore.items[i].visibility = "hidden";
@@ -134,7 +134,7 @@
             // Queue a command to add a new worksheet to store the transactions
             var dataSheet = ctx.workbook.worksheets.add("Transactions");
 
-            // Create strings to store all the static content to display in the Transactions sheet
+            // Create strings to store all static content to display in the Transactions sheet
             var sheetTitle = "WoodGrove Bank";
             var sheetHeading1 = "Expense Transactions - Master List";
             var sheetDesc1 = "This is the master list of your spending activity.";
@@ -142,10 +142,10 @@
             var sheetDesc3 = "Track donations and flag items that need follow up.";
             var tableHeading = "Transactions";
 
-            //Queue a command to fill white color in the sheet to remove gridlines from view
+            //Queue a command to remove gridlines from view
             dataSheet.getRange().format.fill.color = "white";
 
-            // Add all the static content to the Transactions sheet and format the text
+            // Add all static content to the Transactions sheet and format the text
             addContentToWorksheet(dataSheet, "B1:E1", sheetTitle, "SheetTitle");
             addContentToWorksheet(dataSheet, "B3:E3", sheetHeading1, "SheetHeading");
             addContentToWorksheet(dataSheet, "C4:E4", sheetDesc1, "SheetHeadingDesc");
@@ -403,17 +403,17 @@
             // Queue a command to add a new worksheet to show the dashboard
             var dashboardSheet = ctx.workbook.worksheets.add("Dashboard");
 
-            // Create strings to store all the static content to display in the Dashboard sheet
+            // Create strings to store all static content to display in the Dashboard sheet
             var sheetTitle = "WoodGrove Bank";
             var sheetHeading1 = "Expense Trends Dashboard";
             var sheetDesc1 = "See a summary of your spending activity by category and by month.";
-            var sheetDesc2 = "Analyze weekend vs weekday spending.";
+            var sheetDesc2 = "Analyze weekend vs. weekday spending.";
             var sheetHeading2 = "Summary";
             var summaryDataHeader1 = "Total Spent";
             var summaryDataHeader2 = "Total Transactions";
             var summaryDataHeader3 = "Average Spent per Transaction";
-            var tableHeading1 = "Expenses By Category";
-            var tableHeading2 = "Expenses By Month";
+            var tableHeading1 = "Expenses by Category";
+            var tableHeading2 = "Expenses by Month";
 
             //Queue a command to fill white color in the sheet to remove gridlines
             dashboardSheet.getRange().format.fill.color = "white";
@@ -453,11 +453,11 @@
 
             addContentToWorksheet(dashboardSheet, "F30:I350", "", "TableDataRows");
 
-            // Queue commands to set the number format of the Amount column in both the summary tables
+            // Queue commands to set the number format of the Amount column in both summary tables
             expensesByCategoryTable.columns.getItemAt(1).numberFormat = "$#";
             expensesByMonthTable.columns.getItemAt(1).numberFormat = "$#";
 
-            // Next we need to queue commands to add rows to the summary tables
+            // Next, we need to queue commands to add rows to the summary tables
 
             // First, queue a command to get the transactions table in the Data sheet
             var transactionsTable = ctx.workbook.tables.getItem('TransactionsTable', true);
@@ -476,7 +476,7 @@
                     // Using a helper function, get the unique categories in the columns
                     var uniqueCategories = getUnique(categoryColumnValues);
 
-                    // For each unique category, queue a command to add a row to the Expenses By Category table with the total amount spent for that category
+                    // For each unique category, queue a command to add a row to the Expenses by Category table with the total amount spent for that category
                     for (var i in uniqueCategories) {
                         expensesByCategoryTable.rows.add(null, [[uniqueCategories[i], 5]]).getRange().getLastColumn().formulas =
 							'=SUMIF(transactionsTable[CATEGORY], [@[Expense Category]],transactionsTable[AMOUNT])';
@@ -488,7 +488,7 @@
                     // Using a helper function, get the unique months in the columns
                     var uniqueMonths = getUnique(monthColumnValues);
 
-                    // for each unique category, queue a command to add a row to the Expenses By Month table with the total amount spent in that month
+                    // For each unique category, queue a command to add a row to the Expenses by Month table with the total amount spent in that month
                     for (var i in uniqueMonths) {
                         expensesByMonthTable.rows.add(null, [[
 							uniqueMonths[i],
@@ -535,7 +535,7 @@
                     rangeAvgSpentPerTrans.format.font.name = "Corbel";
                     rangeAvgSpentPerTrans.format.font.size = 12;
 
-                    // Queue commands to create a doughnut chart for showing % spent on expenses by category
+                    // Queue commands to create a doughnut chart showing % spent on Expenses by Category
                     var categoryChartDataRange = expensesByCategoryTable.getDataBodyRange();
                     var categoryChart = dashboardSheet.charts.add("3dpie", categoryChartDataRange, Excel.ChartSeriesBy.auto);
                     categoryChart.setPosition("B13", "D25");
@@ -611,14 +611,14 @@
             var sheetDesc2 = "Use this data at the end of the year to report your tax deductions.";
             var sheetHeading2 = "Summary";
             var summaryDataHeader1 = "Total Donations";
-            var tableHeading1 = "Donations By Organization";
-            var tableHeading2 = "Donations By Month";
+            var tableHeading1 = "Donations by Organization";
+            var tableHeading2 = "Donations by Month";
             var tableHeading3 = "Transaction Details";
 
-            //Queue a commad to fill white color in the sheet to remove gridlines
+            //Queue a command to remove gridlines
             donationsSheet.getRange().format.fill.color = "white";
 
-            // Add all the intro content to the Donations sheet and format the text
+            // Add all static content to the Donations sheet and format the text
             addContentToWorksheet(donationsSheet, "B1:G1", sheetTitle, "SheetTitle");
             addContentToWorksheet(donationsSheet, "B3:C3", sheetHeading1, "SheetHeading");
             addContentToWorksheet(donationsSheet, "C4:G4", sheetDesc1, "SheetHeadingDesc");
@@ -692,25 +692,25 @@
 		});
     }
 
-    // Create the follow up items tracker
+    // Create the follow-up items tracker
     function createFollowupItemsTracker() {
 
         // Run a batch operation against the Excel object model
         Excel.run(function (ctx) {
 
-            // Queue a command to add a new worksheet to store the follow up items
+            // Queue a command to add a new worksheet to store follow-up items
             var followupSheet = ctx.workbook.worksheets.add("FollowUp");
 
-            // Create strings to store all the static content to display in the Follow Up sheet
+            // Create strings to store all static content to display in the Follow-Up sheet
             var sheetTitle = "WoodGrove Bank";
-            var sheetHeading1 = "Follow Up Items Tracker";
+            var sheetHeading1 = "Follow-up Items Tracker";
             var sheetDesc1 = "Track the transactions that need follow up in this tracker.";
             var sheetDesc2 = "After follow up, mark it as Complete so it is filtered out of the view.";
             var sheetHeading2 = "Summary";
             var summaryDataHeader1 = "Items Pending";
-            var tableHeading1 = "Follow Up Items List";
+            var tableHeading1 = "Follow-up Items List";
 
-            //Queue a commad to fill white color in the sheet to remove gridlines
+            //Queue a command to remove gridlines
             followupSheet.getRange().format.fill.color = "white";
 
             // Add all the static content to the Follow Up sheet and format the text
@@ -834,16 +834,16 @@
                         return;
                     }
 
-                    // Get the donations sheet
+                    // Get the Donations sheet
                     var donationsSheet = ctx.workbook.worksheets.getItem("Donations");
 
-                    // Get the donations table
+                    // Get the Donations table
                     var donationsTable = ctx.workbook.tables.getItem("DonationsTable");
 
                     // Create a proxy object for the table rows
                     var tableRows = donationsTable.rows;
 
-                    // Queue commands to add some sample rows to the donations table
+                    // Queue commands to add some sample rows to the Donations table
                     tableRows.add(null, [[rowToAdd.values[0][0],
                                             rowToAdd.values[0][1],
                                             rowToAdd.values[0][2],
@@ -913,7 +913,7 @@
 							});
                     }
                 })
-                // Do the same for the Donations By Month table
+                // Do the same for the Donations by Month table
                 .then(function () {
                     var monthColumnValueArrays = monthColumn.values;
                     var monthColumnValueArray = monthColumnValueArrays.map(function (item) { return item[0] });
@@ -939,7 +939,7 @@
         });
     }
 
-    // Add the selected transaction to Follow Up Items tracker
+    // Add the selected transaction to Follow-up Items tracker
     function addToFollowUpItems() {
 
         // Run a batch operation against the Excel object model

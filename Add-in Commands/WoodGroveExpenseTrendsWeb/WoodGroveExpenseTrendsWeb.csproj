@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="App\Home\FunctionFile.HTML" />
     <Content Include="App\Home\Functions.js" />
+    <Content Include="App\Home\Home.html" />
+    <Content Include="App\Home\Home.js" />
     <Content Include="App\Home\TaskPane.HTML" />
     <Content Include="App\Home\TaskPane.js" />
     <Content Include="Content\fabric.components.css" />
