@@ -22,8 +22,8 @@ The WoodGrove Bank Expense Trends add-in demonstrates how you can use the new Ja
 
 You will need:
 
-* Visual Studio 2015
-* Office Developer Tools for Visual Studio
+* [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
+* [Office Developer Tools for Visual Studio[(
 * Latest version of Excel 2016
 
 ## Run the project
