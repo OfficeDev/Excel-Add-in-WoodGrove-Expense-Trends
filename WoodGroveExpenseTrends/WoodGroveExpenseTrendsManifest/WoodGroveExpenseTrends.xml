@@ -322,7 +322,7 @@
         <bt:String id="WG.WelcomeButton.Label" DefaultValue="Welcome" />
         <bt:String id="WG.ImportButton.Label" DefaultValue="Import Transactions" />
         <bt:String id="WG.CreateDashboardButton.Label" DefaultValue="Create Dashboards" />
-        <bt:String id="WG.AnalyzeMenu.Label" DefaultValue="History" />
+        <bt:String id="WG.AnalyzeMenu.Label" DefaultValue="Transaction History" />
         <bt:String id="WG.AnalyzeMenu.Item1.Label" DefaultValue="Year to Date" />
         <bt:String id="WG.AnalyzeMenu.Item2.Label" DefaultValue="Last Year" />
         <bt:String id="WG.AnalyzeMenu.Item3.Label" DefaultValue="All" />

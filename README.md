@@ -24,12 +24,13 @@ You'll need:
 
 * [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
 * [Office Developer Tools for Visual Studio](https://www.visualstudio.com/en-us/features/office-tools-vs.aspx)
-* Excel 2016
+* Excel 2016, version 6769.2011 or later
 
 ## Run the project
 
-1. Copy the project to a local folder and then open the `WoodGrove Expense Trends.sln` in Visual Studio.
-2. Press F5 to build and deploy the sample add-in. Excel launches and depending on the version of Excel 2016 you've, the add-in loads a custom tab called WoodGrove in the ribbon, or opens in a task pane to the right of the worksheet, as shown in the following figures.
+1. Copy the project to a local folder. Ensure that the file path is not too long, otherwise you might run into an error in Visual Studio when it tries to install the NuGet packages necessary for the project. 
+2. Then open the `WoodGrove Expense Trends.sln` in Visual Studio. 
+3. Press F5 to build and deploy the sample add-in. Excel launches and depending on the version of Excel 2016 you've, the add-in loads a custom tab called WoodGrove in the ribbon, or opens in a task pane to the right of the worksheet, as shown in the following figures.
 
 ![WoodGrove Bank Expense Trends Add-in - Initial taskpane] (images/woodgrove_taskpane_ribbon.PNG)
 
