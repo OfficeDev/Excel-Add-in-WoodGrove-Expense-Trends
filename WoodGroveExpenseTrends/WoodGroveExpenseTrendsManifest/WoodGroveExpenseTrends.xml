@@ -25,6 +25,17 @@
       <Host xsi:type="Workbook">
         <!--Form factor. Currently only DesktopFormFactor is supported. We will add TabletFormFactor and PhoneFormFactor in the future-->
         <DesktopFormFactor>
+                     <!--GetStarted information used on the callout that appears when installing the add-in. 
+            Ensure you have build 16.0.6769 or above for GetStarted section to work-->
+          <GetStarted>
+						<!--Title of the Getting Started callout. resid points to a ShortString resource -->
+						<Title resid="WG.GetStarted.Title"/>					
+						<!--Description of the Getting Started callout. resid points to a LongString resource -->
+						<Description resid="WG.GetStarted.Description"/>				
+						<!--Not used right now but you need to provide a valid resource. We will add code in the future to consume this URL. 
+							resid points to a Url resource -->
+						<LearnMoreUrl resid="WG.GetStarted.LearnMoreUrl"/>
+					</GetStarted>
           <!--Function file is an html page that includes the javascript where functions for ExecuteAction will be called. 
             Think of the FunctionFile as the "code behind" ExecuteFunction-->
           <FunctionFile resid="WG.FunctionFile.Url" />
@@ -317,6 +328,8 @@
       <bt:Urls>
         <bt:Url id="WG.FunctionFile.Url" DefaultValue="~remoteAppUrl/App/Home/FunctionFile.html" />
         <bt:Url id="WG.Taskpane1.Url" DefaultValue="~remoteAppUrl/App/Home/TaskPane.html" />
+        <!--LearnMore URL currently not used -->
+        <bt:Url id="WG.GetStarted.LearnMoreUrl" DefaultValue="https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="WG.WelcomeButton.Label" DefaultValue="Welcome" />
@@ -333,6 +346,7 @@
         <bt:String id="WG.Tab1.TabLabel" DefaultValue="WoodGrove" />
         <bt:String id="WG.AddDonationButton.Label" DefaultValue="Add Donation" />
         <bt:String id="WG.AddFollowUpButton.Label" DefaultValue="Follow Up" />
+        <bt:String id="WG.GetStarted.Title" DefaultValue="WoodGrove Excel add-in was succesfully loaded" />
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="WG.Group1.Tooltip" DefaultValue="Click to get started with the Expense Trends Add-in" />
@@ -348,6 +362,7 @@
         <bt:String id="WG.AnalyzeTaskPaneButton.Tooltip" DefaultValue="Click to analyze spending activity on this menu" />
         <bt:String id="WG.AddDonationButton.Tooltip" DefaultValue="Click to add the selected transaction as a donation" />
         <bt:String id="WG.AddFollowUpButton.Tooltip" DefaultValue="Click to add the selected transaction for follow up" />
+        <bt:String id="WG.GetStarted.Description" DefaultValue="Click the WoodGrove tab on the Office ribbon to use the add-in" />
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
