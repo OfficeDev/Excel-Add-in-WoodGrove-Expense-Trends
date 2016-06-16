@@ -1,5 +1,3 @@
-<div class="WordSection1">
-
 # Office App Source code
 
 **Table of Contents**
@@ -30,5 +28,3 @@ Run them in multiple environments like Office desktop applications, Office 365, 
 
 [Developer Site](http://msdn.microsoft.com/en-us/office/aa905340)
 [Technical Blog Site](http://blogs.msdn.com/b/officeapps)
-
-</div>
