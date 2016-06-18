@@ -1,5 +1,3 @@
-<div class="WordSection1">
-
 # Office App Source code
 
 **Table of Contents**
@@ -48,5 +46,3 @@ With the Office App source code project, you could learn from real app source co
 ## Related Resource
 
 [Developer Site](http://msdn.microsoft.com/en-us/office/aa905340) [Technical Blog Site](http://blogs.msdn.com/b/officeapps)
-
-</div>
