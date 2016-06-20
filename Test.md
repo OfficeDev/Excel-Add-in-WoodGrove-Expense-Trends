@@ -1,8 +1,9 @@
+
 # Excel-Add-in-JS-WoodGrove-Expense-Trends
 
 The WoodGrove Bank Expense Trends add-in demonstrates how you can use the new JavaScript API for Microsoft Excel 2016 to create a compelling Excel add-in. With Expense Trends, you can import expense transactions into the workbook, create dashboard and trackers, view and analyze trends, and track special transactions such as charitable donations and follow up items. The sample provides two experiences: one with task pane and another with add-in commands. The following figures show the main screens of this add-in.
 
-Thanks
+I did it!
 
 [<span style="text-decoration: none;">![WoodGrove Bank Expense Trends Add-in - Ribbon](images/woodgrove_taskpane_ribbon.PNG)</span>](images/woodgrove_taskpane_ribbon.PNG)
 
@@ -31,7 +32,7 @@ You'll need:
 ## Run the project
 
 1.  Copy the project to a local folder. Ensure that the file path is not too long, otherwise you might run into an error in Visual Studio when it tries to install the NuGet packages necessary for the project.
-2.  Then open the `<span style="font-size: 10pt;"><span style="font-size: 10pt;">WoodGrove Expense Trends.sln</span></span>` in Visual Studio.
+2.  Then open the `<span style="font-size: 10pt;"><span style="font-size: 10pt;"><span style="font-size: 10pt;">WoodGrove Expense Trends.sln</span></span></span>` in Visual Studio.
 3.  Press F5 to build and deploy the sample add-in. Excel launches and depending on the version of Excel 2016 you've, the add-in loads a custom tab called WoodGrove in the ribbon, or opens in a task pane to the right of the worksheet, as shown in the following figures.
 
 [<span style="text-decoration: none;">![WoodGrove Bank Expense Trends Add-in - Initial taskpane](images/woodgrove_taskpane_ribbon.PNG)</span>](images/woodgrove_taskpane_ribbon.PNG)
