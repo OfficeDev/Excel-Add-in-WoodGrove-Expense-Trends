@@ -1,3 +1,5 @@
+<div class="WordSection1">
+
 # Office App Source code
 
 **Table of Contents**
@@ -9,7 +11,7 @@
 
 ## Updated using Word To Github Add-in
 
-### Andy likes this addin
+### Uma got the sha
 
 Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you want to add. You can also type a keyword to search online for the video that best fits your document.
 
@@ -46,3 +48,5 @@ With the Office App source code project, you could learn from real app source co
 ## Related Resource
 
 [Developer Site](http://msdn.microsoft.com/en-us/office/aa905340) [Technical Blog Site](http://blogs.msdn.com/b/officeapps)
+
+</div>
