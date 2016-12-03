@@ -69,6 +69,6 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup>
-    <PreBuildEvent>del %25LOCALAPPDATA%25\Microsoft\Office\16.0\Wef\AppCommands /q</PreBuildEvent>
+    <PreBuildEvent>del "%25LOCALAPPDATA%25\Microsoft\Office\16.0\Wef\AppCommands" /q</PreBuildEvent>
   </PropertyGroup>
 </Project>
