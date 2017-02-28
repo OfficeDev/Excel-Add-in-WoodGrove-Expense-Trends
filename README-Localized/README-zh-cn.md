@@ -2,15 +2,15 @@
 
 WoodGrove Bank 支出趋势外接程序演示如何使用适用于 Microsoft Excel 2016 的新 JavaScript API 创建引人注目的 Excel 外接程序。通过支出趋势，你可以将支出交易导入工作簿、创建仪表板和跟踪器、查看并分析趋势，以及跟踪特殊交易（如慈善捐款）和跟进项目。该示例提供了两种体验：使用任务窗格的体验和使用外接程序命令的体验。下图显示了该外接程序的主屏幕。
 
-![WoodGrove Bank 支出趋势外接程序 - 功能区] (images/woodgrove_taskpane_ribbon.PNG)
+![WoodGrove Bank 支出趋势外接程序 - 功能区] (../images/woodgrove_taskpane_ribbon.PNG)
 
-![WoodGrove Bank 支出趋势外接程序 - 初始任务窗格] (images/woodgrove_taskpane_import.PNG)
+![WoodGrove Bank 支出趋势外接程序 - 初始任务窗格] (../images/woodgrove_taskpane_import.PNG)
 
-![WoodGrove Bank 支出趋势外接程序 - 交易工作表] (images/woodgrove_taskpane_data.PNG)
+![WoodGrove Bank 支出趋势外接程序 - 交易工作表] (../images/woodgrove_taskpane_data.PNG)
 
-![WoodGrove Bank 支出趋势外接程序 - 仪表板] (images/woodgrove_taskpane_dashboard.PNG)
+![WoodGrove Bank 支出趋势外接程序 - 仪表板] (../images/woodgrove_taskpane_dashboard.PNG)
 
-![WoodGrove Bank 支出趋势外接程序 - 捐款跟踪器] (images/woodgrove_taskpane_donations.PNG)
+![WoodGrove Bank 支出趋势外接程序 - 捐款跟踪器] (../images/woodgrove_taskpane_donations.PNG)
 
 ## <a name="table-of-contents"></a>目录
 
@@ -23,7 +23,7 @@ WoodGrove Bank 支出趋势外接程序演示如何使用适用于 Microsoft Exc
 需要具备以下条件：
 
 * [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
-* [Visual Studio 的 Office 开发人员工具](https://www.visualstudio.com/en-us/features/office-tools-vs.aspx)
+* [Visual Studio 的 Office 开发人员工具](https://www.visualstudio.com/zh-hans/vs/office-tools/)
 * Excel 2016，版本 6769.2011 或更高版本
 
 ## <a name="run-the-project"></a>运行项目
@@ -32,9 +32,9 @@ WoodGrove Bank 支出趋势外接程序演示如何使用适用于 Microsoft Exc
 2. 然后打开 Visual Studio 中的 `WoodGrove Expense Trends.sln`。 
 3. 按 F5 生成并部署示例外接程序。Excel 将启动，根据你拥有的 Excel 2016 版本，外接程序在功能区中加载名为 WoodGrove 的自定义选项卡或在工作表右侧的任务窗格中打开，如下图中所示。
 
-![WoodGrove Bank 支出趋势外接程序 - 初始任务窗格] (images/woodgrove_taskpane_ribbon.PNG)
+![WoodGrove Bank 支出趋势外接程序 - 初始任务窗格] (../images/woodgrove_taskpane_ribbon.PNG)
 
-![WoodGrove Bank 支出趋势外接程序 - 初始任务窗格] (images/woodgrove_taskpane_import.PNG)
+![WoodGrove Bank 支出趋势外接程序 - 初始任务窗格] (../images/woodgrove_taskpane_import.PNG)
 
 ## <a name="additional-resources"></a>其他资源
 
