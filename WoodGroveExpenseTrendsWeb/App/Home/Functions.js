@@ -1,4 +1,4 @@
-﻿/// <reference path="../App.js" />
+args﻿/// <reference path="../App.js" />
 
 (function () {
     "use strict";
@@ -16,8 +16,9 @@ Office.initialize = function (reason) {
     };
 })();
 
+
 // Create the Welcome sheet 
-function createWelcomeSheet() {
+function createWelcomeSheet(args) {
 
     // Run a batch operation against the Excel object model
     Excel.run(function (ctx) {
@@ -25,6 +26,7 @@ function createWelcomeSheet() {
         // Queue a command to get the worksheet collection of existing sheets
         var worksheetsBefore = ctx.workbook.worksheets;
 
+        
         // Queue a command to load the name property of each worksheet in the collection
         // We will use this later to hide all the existing sheets from view
         worksheetsBefore.load("name");
@@ -80,10 +82,11 @@ function createWelcomeSheet() {
     .catch(function (error) {
         handleError(error);
     });
+    args.completed();
 }
 
 // Import sample transactions into the workbook
-function importTransactions() {
+function importTransactions(args) {
 
     // Store transactions in a variable
     var myBankTransactions;
@@ -107,7 +110,7 @@ function importTransactions() {
         var sheetDesc3 = "Track donations and flag items that need follow up.";
         var tableHeading = "Transactions";
 
-        //Fill white color in the sheet to remove gridlines
+g        //Fill white color in the sheet to remove gridlines
         dataSheet.getRange().format.fill.color = "white";
 
         // Add all the staticcontent to the Transactions sheet and format the text
@@ -117,7 +120,7 @@ function importTransactions() {
         addContentToWorksheet(dataSheet, "C5:E5", sheetDesc2, "SheetHeadingDesc");
         addContentToWorksheet(dataSheet, "C6:E6", sheetDesc3, "SheetHeadingDesc");
         addContentToWorksheet(dataSheet, "B19:B19", tableHeading, "TableHeading");
-
+a
 
         //Run the queued-up commands, and return a promise to indicate task completion
         return ctx.sync()
@@ -169,7 +172,7 @@ function importTransactions() {
 
                        // Queue commands to auto-fit columns and rows
                        dataSheet.getUsedRange().getEntireColumn().format.autofitColumns();
-                       dataSheet.getUsedRange().getEntireRow().format.autofitRows();
+    args.completed();                       dataSheet.getUsedRange().getEntireRow().format.autofitRows();
 
 
                        // Queue a command to activate the Transactions sheet
@@ -183,10 +186,11 @@ function importTransactions() {
     .catch(function (error) {
         handleError(error);
     });
+    args.completed();
 }
-
+a
 // Filter the transactions table to show YTD transactions
-function showYTDTransactions() {
+function showYTDTransactions(args) {
 
     // Run a batch operation against the Excel object model
     Excel.run(function (ctx) {
@@ -194,7 +198,7 @@ function showYTDTransactions() {
         // Queue a command to get the transactions sheet
         var transactionsSheet = ctx.workbook.worksheets.getItem("Transactions");
 
-        // Queue a command to activate the transactions sheet
+a        // Queue a command to activate the transactions sheet
         transactionsSheet.activate();
 
         // Queue a command to get the transactions table
@@ -216,11 +220,11 @@ function showYTDTransactions() {
     .catch(function (error) {
         handleError(error);
     });
-
+    args.completed();
 }
 
 // Filter the transactions table to show last year's transactions
-function showLastYearTransactions() {
+function showLastYearTransactions(args) {
 
     // Run a batch operation against the Excel object model
     Excel.run(function (ctx) {
@@ -251,10 +255,11 @@ function showLastYearTransactions() {
     .catch(function (error) {
         handleError(error);
     });
+    args.completed();
 }
 
 // Clear the filters to show all transactions
-function showAllTransactions() {
+function showAllTransactions(args) {
 
     // Run a batch operation against the Excel object model
     Excel.run(function (ctx) {
@@ -280,6 +285,7 @@ function showAllTransactions() {
     .catch(function (error) {
         handleError(error);
     });
+    args.completed();    
 }
 
 // Filter the transactions table to show selected categories
@@ -338,11 +344,12 @@ function showAllCategories() {
 }
 
 // Create the dashboard/trackers
-function createDashboardAndTrackers() {
+function createDashboardAndTrackers(args) {
     // Call the three functions
     createDashboard();
     createDonationsTracker();
     createFollowupItemsTracker();
+    args.completed();
 }
 
 // Create the dashboard  with summary data and tables
@@ -784,7 +791,7 @@ function createFollowupItemsTracker() {
         return ctx.sync();
 
     })
-    .catch(function (error) {
+g    .catch(function (error) {
         handleError(error);
     });
 }
@@ -830,7 +837,7 @@ function viewDashboard() {
 }
 
 // Add the selected transaction to donations tracker
-function addToTaxDeductibleItems() {
+function addToTaxDeductibleItems(args) {
 
     // Run a batch operation against the Excel object model
     Excel.run(function (ctx) {
@@ -901,6 +908,7 @@ function addToTaxDeductibleItems() {
     .catch(function (error) {
         handleError(error);
     });
+    args.completed();
 }
 
 // Update the summary tables in the donations tracker
@@ -974,7 +982,7 @@ function updateDonationTrackerSummaryTables() {
 }
 
 // Add the selected transaction to Follow Up Items tracker
-function addToFollowUpItems() {
+function addToFollowUpItems(args) {
 
         // Run a batch operation against the Excel object model
         Excel.run(function (ctx) {
@@ -990,6 +998,7 @@ function addToFollowUpItems() {
             // Get the table
             var transactionsTable = ctx.workbook.tables.getItem("TransactionsTable");
 
+            
             // Maintain a variable to ensure that a valid table cell
             var keepGoing = true;
 
@@ -1045,6 +1054,7 @@ function addToFollowUpItems() {
     .catch(function (error) {
         handleError(error);
     });
+    args.completed();
 }
 
 // Helper function that returns unique items in an array
