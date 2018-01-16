@@ -1,16 +1,16 @@
-# <a name="excel-add-in-js-woodgrove-expense-trends"></a>Excel-Add-in-JS-WoodGrove-Expense-Trends
+﻿# <a name="excel-add-in-js-woodgrove-expense-trends"></a>Excel-Add-in-JS-WoodGrove-Expense-Trends
 
 Le complément de tendances de dépenses bancaires WoodGrove montre comment vous pouvez utiliser la nouvelle API JavaScript pour Microsoft Excel 2016 en vue de créer un complément Excel attrayant. Avec ce complément, vous pouvez importer des transactions de dépenses dans le classeur, créer des tableaux de bord et des suivis, afficher et analyser les tendances, et assurer le suivi des transactions spéciales telles que les dons. L’exemple fournit deux expériences : une avec le volet Office et l’autre avec les commandes de complément. Les figures suivantes présentent les écrans principaux de ce complément.
 
-![Complément de tendances de dépenses bancaires WoodGrove - Ruban] (../images/woodgrove_taskpane_ribbon.PNG)
+![Complément de tendances de dépenses bancaires WoodGrove - Ruban](../images/woodgrove_taskpane_ribbon.PNG)
 
-![Complément de tendances de dépenses bancaires WoodGrove - Volet Office initial] (../images/woodgrove_taskpane_import.PNG)
+![Complément de tendances de dépenses bancaires WoodGrove - Volet Office initial](../images/woodgrove_taskpane_import.PNG)
 
-![Complément de tendances de dépenses bancaires WoodGrove - Feuille de transactions] (../images/woodgrove_taskpane_data.PNG)
+![Complément de tendances de dépenses bancaires WoodGrove - Feuille de transaction](../images/woodgrove_taskpane_data.PNG)
 
-![Complément de tendances de dépenses bancaires WoodGrove - Tableau de bord] (../images/woodgrove_taskpane_dashboard.PNG)
+![Complément de tendances de dépenses bancaires WoodGrove - Tableau de bord](../images/woodgrove_taskpane_dashboard.PNG)
 
-![Complément de tendances de dépenses bancaires WoodGrove - Suivi des dons] (../images/woodgrove_taskpane_donations.PNG)
+![Complément de tendances de dépenses bancaires WoodGrove - Suivi des dons](../images/woodgrove_taskpane_donations.PNG)
 
 ## <a name="table-of-contents"></a>Sommaire
 
@@ -23,7 +23,7 @@ Le complément de tendances de dépenses bancaires WoodGrove montre comment vous
 Vous devez disposer des éléments suivants :
 
 * [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
-* [Outils de développement Office pour Visual Studio](https://www.visualstudio.com/fr/vs/office-tools/)
+* [Outils de développement Office pour Visual Studio](https://www.visualstudio.com/en-us/features/office-tools-vs.aspx)
 * Excel 2016, version 6769.2011 ou ultérieure
 
 ## <a name="run-the-project"></a>Exécuter le projet
@@ -43,3 +43,6 @@ Vous devez disposer des éléments suivants :
 ## <a name="copyright"></a>Copyright
 Copyright (c) 2016 Microsoft. Tous droits réservés.
 
+
+
+Ce projet a adopté le [code de conduite Open Source de Microsoft](https://opensource.microsoft.com/codeofconduct/). Pour plus d’informations, reportez-vous à la [FAQ relative au code de conduite](https://opensource.microsoft.com/codeofconduct/faq/) ou contactez [opencode@microsoft.com](mailto:opencode@microsoft.com) pour toute question ou tout commentaire.

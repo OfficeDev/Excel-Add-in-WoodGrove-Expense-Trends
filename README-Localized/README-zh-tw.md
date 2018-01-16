@@ -1,16 +1,16 @@
-# <a name="excel-add-in-js-woodgrove-expense-trends"></a>Excel-Add-in-JS-WoodGrove-Expense-Trends
+﻿# <a name="excel-add-in-js-woodgrove-expense-trends"></a>Excel-Add-in-JS-WoodGrove-Expense-Trends
 
 WoodGrove 銀行費用趨勢增益集將示範如何使用 Microsoft Excel 2016 的新 JavaScript API，建立令人讚嘆的 Excel 增益集。使用費用趨勢，您可以將費用交易匯入活頁簿、建立儀表板和追蹤器、檢視和分析趨勢，以及追蹤特殊的交易，例如慈善捐款及待處理項目。這個範例提供兩個經驗︰一個使用工作窗格，另一個使用增益集命令。下圖顯示這個增益集的主畫面。
 
-![WoodGrove 銀行費用趨勢增益集 - 功能區] (../images/woodgrove_taskpane_ribbon.PNG)
+![WoodGrove Bank Expense Trends 增益集 - 功能區](../images/woodgrove_taskpane_ribbon.PNG)
 
-![WoodGrove 銀行費用趨勢增益集 - 初始工作窗格] (../images/woodgrove_taskpane_import.PNG)
+![WoodGrove Bank Expense Trends 增益集 - 初始工作窗格](../images/woodgrove_taskpane_import.PNG)
 
-![WoodGrove 銀行費用趨勢增益集 - 交易工作表] (../images/woodgrove_taskpane_data.PNG)
+![WoodGrove Bank Expense Trends 增益集 - 交易工作表](../images/woodgrove_taskpane_data.PNG)
 
-![WoodGrove 銀行費用趨勢增益集 - 儀表板] (../images/woodgrove_taskpane_dashboard.PNG)
+![WoodGrove Bank Expense Trends 增益集 - 儀表板](../images/woodgrove_taskpane_dashboard.PNG)
 
-![WoodGrove 銀行費用趨勢增益集 - 捐款追蹤器] (../images/woodgrove_taskpane_donations.PNG)
+![WoodGrove Bank Expense Trends 增益集 - 捐贈追蹤器](../images/woodgrove_taskpane_donations.PNG)
 
 ## <a name="table-of-contents"></a>目錄
 
@@ -23,7 +23,7 @@ WoodGrove 銀行費用趨勢增益集將示範如何使用 Microsoft Excel 2016 
 您將需要下列項目：
 
 * [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
-* [Visual Studio 的 Office 開發人員工具](https://www.visualstudio.com/zh-hant/vs/office-tools/)
+* [Visual Studio 的 Office 開發人員工具](https://www.visualstudio.com/en-us/features/office-tools-vs.aspx)
 * Excel 2016 6769.2011 版或更新版本
 
 ## <a name="run-the-project"></a>執行專案
@@ -43,3 +43,6 @@ WoodGrove 銀行費用趨勢增益集將示範如何使用 Microsoft Excel 2016 
 ## <a name="copyright"></a>著作權
 Copyright (c) 2016 Microsoft.著作權所有，並保留一切權利。
 
+
+
+此專案已採用 [Microsoft 開放原始碼管理辦法](https://opensource.microsoft.com/codeofconduct/)。如需詳細資訊，請參閱[管理辦法常見問題集](https://opensource.microsoft.com/codeofconduct/faq/)，如果有其他問題或意見，請連絡 [opencode@microsoft.com](mailto:opencode@microsoft.com)。

@@ -1,16 +1,16 @@
-# <a name="excel-add-in-js-woodgrove-expense-trends"></a>Excel-Add-in-JS-WoodGrove-Expense-Trends
+﻿# <a name="excel-add-in-js-woodgrove-expense-trends"></a>Excel-Add-in-JS-WoodGrove-Expense-Trends
 
 WoodGrove Bank Expense Trends アドインには、Microsoft Excel 2016 用の新しい JavaScript API を使用して、魅力的な Excel アドインを作成する方法が示されます。Expense Trends では、ブックへの経費トランザクションのインポート、ダッシュボードや追跡ツールの作成、傾向の表示と分析、慈善寄付やフォロー アップ項目などの特殊なトランザクションの追跡を実行できます。サンプルには、2 つのエクスペリエンスが用意されています。1 つは作業ウィンドウに関するもので、もう 1 つはアドイン コマンドに関するものです。次の図は、このアドインのメイン画面を示しています。
 
-![WoodGrove Bank Expense Trends アドイン - リボン] (../images/woodgrove_taskpane_ribbon.PNG)
+![WoodGrove Bank Expense Trends アドイン - リボン](../images/woodgrove_taskpane_ribbon.PNG)
 
-![WoodGrove Bank Expense Trends アドイン - 初期作業ウィンドウ] (../images/woodgrove_taskpane_import.PNG)
+![WoodGrove Bank Expense Trends アドイン - 初期作業ウィンドウ](../images/woodgrove_taskpane_import.PNG)
 
-![WoodGrove Bank Expense Trends アドイン - トランザクション シート] (../images/woodgrove_taskpane_data.PNG)
+![WoodGrove Bank Expense Trends アドイン - トランザクション シート](../images/woodgrove_taskpane_data.PNG)
 
-![WoodGrove Bank Expense Trendsアドイン - ダッシュボード] (../images/woodgrove_taskpane_dashboard.PNG)
+![WoodGrove Bank Expense Trends アドイン - ダッシュボード](../images/woodgrove_taskpane_dashboard.PNG)
 
-![WoodGrove Bank Expense Trends アドイン - 寄付追跡ツール] (../images/woodgrove_taskpane_donations.PNG)
+![WoodGrove Bank Expense Trends アドイン - 寄付追跡ツール](../images/woodgrove_taskpane_donations.PNG)
 
 ## <a name="table-of-contents"></a>目次
 
@@ -23,7 +23,7 @@ WoodGrove Bank Expense Trends アドインには、Microsoft Excel 2016 用の�
 以下のものが必要です。
 
 * [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
-* [Office Developer Tools for Visual Studio](https://www.visualstudio.com/ja/vs/office-tools/)
+* [Office Developer Tools for Visual Studio](https://www.visualstudio.com/en-us/features/office-tools-vs.aspx)
 * Excel 2016 バージョン 6769.2011 以降
 
 ## <a name="run-the-project"></a>プロジェクトを実行する
@@ -41,5 +41,8 @@ WoodGrove Bank Expense Trends アドインには、Microsoft Excel 2016 用の�
 * [Office デベロッパー センター](http://dev.office.com/)
 
 ## <a name="copyright"></a>著作権
-Copyright (c) 2016 Microsoft. All rights reserved.
+Copyright (c) 2016 Microsoft.All rights reserved.
 
+
+
+このプロジェクトでは、[Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) が採用されています。詳細については、「[Code of Conduct の FAQ](https://opensource.microsoft.com/codeofconduct/faq/)」を参照してください。また、その他の質問やコメントがあれば、[opencode@microsoft.com](mailto:opencode@microsoft.com) までお問い合わせください。
