@@ -1,4 +1,4 @@
-args﻿/// <reference path="../App.js" />
+﻿/// <reference path="../App.js" />
 
 (function () {
     "use strict";
