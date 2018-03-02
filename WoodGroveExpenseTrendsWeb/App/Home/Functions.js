@@ -110,7 +110,7 @@ function importTransactions(args) {
         var sheetDesc3 = "Track donations and flag items that need follow up.";
         var tableHeading = "Transactions";
 
-g        //Fill white color in the sheet to remove gridlines
+        //Fill white color in the sheet to remove gridlines
         dataSheet.getRange().format.fill.color = "white";
 
         // Add all the staticcontent to the Transactions sheet and format the text
@@ -120,7 +120,7 @@ g        //Fill white color in the sheet to remove gridlines
         addContentToWorksheet(dataSheet, "C5:E5", sheetDesc2, "SheetHeadingDesc");
         addContentToWorksheet(dataSheet, "C6:E6", sheetDesc3, "SheetHeadingDesc");
         addContentToWorksheet(dataSheet, "B19:B19", tableHeading, "TableHeading");
-a
+
 
         //Run the queued-up commands, and return a promise to indicate task completion
         return ctx.sync()
@@ -172,7 +172,7 @@ a
 
                        // Queue commands to auto-fit columns and rows
                        dataSheet.getUsedRange().getEntireColumn().format.autofitColumns();
-    args.completed();                       dataSheet.getUsedRange().getEntireRow().format.autofitRows();
+                       dataSheet.getUsedRange().getEntireRow().format.autofitRows();
 
 
                        // Queue a command to activate the Transactions sheet
@@ -188,7 +188,7 @@ a
     });
     args.completed();
 }
-a
+
 // Filter the transactions table to show YTD transactions
 function showYTDTransactions(args) {
 
@@ -198,7 +198,7 @@ function showYTDTransactions(args) {
         // Queue a command to get the transactions sheet
         var transactionsSheet = ctx.workbook.worksheets.getItem("Transactions");
 
-a        // Queue a command to activate the transactions sheet
+        // Queue a command to activate the transactions sheet
         transactionsSheet.activate();
 
         // Queue a command to get the transactions table
@@ -791,7 +791,7 @@ function createFollowupItemsTracker() {
         return ctx.sync();
 
     })
-g    .catch(function (error) {
+    .catch(function (error) {
         handleError(error);
     });
 }
