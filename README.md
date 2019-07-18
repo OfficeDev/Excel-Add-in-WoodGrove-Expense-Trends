@@ -1,15 +1,16 @@
 ---
 topic: sample
 products:
-- Excel
-- Office 365
+- office-excel
+- office-365
 languages:
-- CSS
-- JavaScript
+- javascript
 extensions:
   contentType: samples
   technologies:
   - Add-ins
+  platforms:
+  - CSS
   createdDate: 3/25/2016 12:36:29 PM
 ---
 # Excel-Add-in-JS-WoodGrove-Expense-Trends
