@@ -47,9 +47,9 @@ You'll need the following:
 2. Then open the `WoodGrove Expense Trends.sln` in Visual Studio. 
 3. Press F5 to build and deploy the sample add-in. Excel launches and depending on the version of Excel 2016 you've, the add-in loads a custom tab called WoodGrove in the ribbon, or opens in a task pane to the right of the worksheet, as shown in the following figures.
 
-![WoodGrove Bank Expense Trends Add-in - Initial taskpane] (images/woodgrove_taskpane_ribbon.PNG)
+![WoodGrove Bank Expense Trends Add-in - Initial taskpane](images/woodgrove_taskpane_ribbon.PNG)
 
-![WoodGrove Bank Expense Trends Add-in - Initial taskpane] (images/woodgrove_taskpane_import.PNG)
+![WoodGrove Bank Expense Trends Add-in - Initial taskpane](images/woodgrove_taskpane_import.PNG)
 
 ## Additional resources
 
